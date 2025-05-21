@@ -12,12 +12,7 @@ public class Loan {
     }
 
     public boolean isPersonalLoanAvailable() {
-        if (customer.isIncomeEqualOrLowerThan(3000.0))
-            return true;
-
-        return customer.isIncomeBetween(3000.0, 5000.0)
-                && customer.isAgeLowerThan(30)
-                && customer.isFromLocation("SP");
+        return isBasicLoanAvailable();
     }
 
     public boolean isConsignmentLoanAvailable() {
@@ -25,12 +20,7 @@ public class Loan {
     }
 
     public boolean isGuaranteedLoanAvailable() {
-        if (customer.isIncomeEqualOrLowerThan(3000.0))
-            return true;
-
-        return customer.isIncomeBetween(3000.0, 5000.0)
-                && customer.isAgeLowerThan(30)
-                && customer.isFromLocation("SP");
+        return isBasicLoanAvailable();
     }
 
     public Double getPersonalLoanInterestRate() {
@@ -52,5 +42,14 @@ public class Loan {
             return 3.0;
         }
         throw new LoanNotAvailableException("Guaranteed loan not available. Check the conditions");
+    }
+
+    private boolean isBasicLoanAvailable() {
+        if (customer.isIncomeEqualOrLowerThan(3000.0))
+            return true;
+
+        return customer.isIncomeBetween(3000.0, 5000.0)
+                && customer.isAgeLowerThan(30)
+                && customer.isFromLocation("SP");
     }
 }
