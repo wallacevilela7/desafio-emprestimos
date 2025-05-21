@@ -37,20 +37,20 @@ public class Loan {
         if (isPersonalLoanAvailable()) {
             return 4.0;
         }
-        throw new LoanNotAvailableException("Personal loan not available for this customer");
+        throw new LoanNotAvailableException("Personal loan not available. Check the conditions");
     }
 
     public Double getConsignmentLoanInterestRate() {
         if (isConsignmentLoanAvailable()) {
             return 2.0;
         }
-        throw new LoanNotAvailableException("Consignment loan not available for this customer");
+        throw new LoanNotAvailableException("Consignment loan not available. Check the conditions");
     }
 
     public Double getGuaranteedLoanInterestRate() {
         if (isGuaranteedLoanAvailable()) {
             return 3.0;
         }
-        throw new LoanNotAvailableException("Guaranteed loan not available for this customer");
+        throw new LoanNotAvailableException("Guaranteed loan not available. Check the conditions");
     }
 }
