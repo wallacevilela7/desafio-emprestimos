@@ -1,6 +1,5 @@
 package tech.wvs.desafioemprestimos.domain;
 
-import org.springframework.expression.spel.ast.ValueRef;
 import tech.wvs.desafioemprestimos.domain.exception.LoanNotAvailableException;
 
 public class Loan {
